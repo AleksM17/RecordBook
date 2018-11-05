@@ -1,9 +1,4 @@
-﻿use master
-go 
-CREATE database GuestBook
-go
-use GuestBook
-go
+﻿go
 CREATE TABLE Records
 (
 [Id] int identity PRIMARY KEY,
@@ -11,9 +6,3 @@ CREATE TABLE Records
 [Author] nvarchar(30) NOT NULL,
 [Date]DATE NOT NULL
 )
-GO
-SELECT [Id],[Message],[Author],[Date]
-FROM Records
-GO 
-INSERT INTO Records ([Message],[Author], [Date])
-VALUES ('Hello','Sasha','11/1/2018')

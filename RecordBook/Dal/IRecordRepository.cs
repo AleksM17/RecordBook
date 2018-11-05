@@ -10,6 +10,14 @@ namespace RecordBook.Dal
     interface IRecordRepository
     {
         List<Record> GetRecords();
+
         void CreateRecord(Record rec);
+
+        void UpdateRecord(Record rec);
+
+        Record GetRecord(int id);
+
+        void Delete(Record rec);
+
     }
 }

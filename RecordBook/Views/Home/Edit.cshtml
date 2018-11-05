@@ -1,0 +1,49 @@
+﻿@model RecordBook.Models.Record
+
+
+<form method="post">
+
+    <div class="form-horizontal">
+        <h4>Record</h4>
+        <hr />
+        @Html.ValidationSummary()
+
+        <input type="hidden" name="Id" value="@Model.Id" />
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            <label> Message</label>
+            <div class="col-md-10">
+                <input type="text" name="message" value="@Model.Message" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            Author:
+            <div class="col-md-10">
+                @Model.Author
+            </div>
+        </div>
+
+        <div class="form-group">
+            Date:
+            <div class="col-md-10">
+                @Model.Date
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

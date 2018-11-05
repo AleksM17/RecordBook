@@ -32,5 +32,41 @@ namespace RecordBook.Controllers
             }
             return View(record);
         }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            Record record = _recordRepo.GetRecord(id);
+            return View(record);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Record record)
+        {
+            if (ModelState.IsValid)
+            {
+                _recordRepo.UpdateRecord(record);
+                return RedirectToAction("Index");
+            }
+            return View(record);
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            Record record = _recordRepo.GetRecord(id);
+            return View(record);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Record record)
+        {
+            if (ModelState.IsValid)
+            {
+                _recordRepo.Delete(record);
+                return RedirectToAction("Index");
+            }
+            return View(record);
+        }
     }
 }
